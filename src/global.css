@@ -8,8 +8,11 @@
   --type-second: 'Spectral', Georgia;
 }
 
-body, input, button {
+body {
   padding-top: 4rem;
+}
+
+body, input, button {
   font-family: var(--type-first);
   font-size: 1rem;
   color: #333;
