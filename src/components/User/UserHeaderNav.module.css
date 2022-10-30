@@ -1,0 +1,111 @@
+.menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.menu a, 
+.menu button,
+.mobileButton {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .2rem;
+  border: 1px solid transparent;
+  background: #eee;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.menu a:hover:not(.active),
+.menu a:focus:not(.active), 
+.menu button:hover:not(.active),
+.menu button:focus:not(.active) {
+  background: #fff;
+  box-shadow: 0 0 0 3px #eee;
+  border-color: #333;
+  outline: none;
+} 
+
+.menu a.active {
+  border-color: var(--yellow-500);
+  box-shadow: 0 0 0 3px var(--yellow-300);
+  background: #fff;
+  outline: none;
+}
+
+.menu a.active svg > * {
+  fill: var(--yellow-500);
+}
+
+.mobileButton:hover,
+.mobileButton:focus,
+.mobileButtonActive {
+  border-color: var(--yellow-500);
+  box-shadow: 0 0 0 3px var(--yellow-300);
+  background: #fff;
+  outline: none;
+  color: var(--yellow-500);
+}
+
+.mobileButton::after {
+  content: '';
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  box-shadow: 0px -6px currentColor, 0px 6px 0px currentColor;
+  transition: .2s;
+}
+
+.mobileButtonActive::after {
+  transform: rotate(90deg);
+  width: 4px;
+  height: 4px;
+  box-shadow: 0px -8px 0px currentColor, 0px 8px 0px currentColor;
+}
+
+.mobileMenu {
+  display: block;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  padding: 0 1rem;
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0.2rem;
+  opacity: 0;
+  transform: translateX(-20px);
+  pointer-events: none;
+}
+
+.mobileMenuActive {
+  transition: .3s;
+  opacity: 1;
+  transform: initial;
+  pointer-events: initial;
+  z-index: 100;
+}
+
+.mobileMenu a, 
+.mobileMenu button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: .5rem 0;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.mobileMenu a:hover svg > *,
+.mobileMenu button:hover svg > * {
+  fill: var(--yellow-500);
+}
+
+.mobileMenu button {
+  background: none;
+  border: none;
+}
