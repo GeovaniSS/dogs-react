@@ -10,8 +10,7 @@ export const useAxios = () => {
 
   const request = React.useCallback(
     async (url: string, options?: AxiosRequestConfig) => {
-      let response;
-      let data;
+      let response, data;
       try {
         setError(null);
         setLoading(true);
@@ -24,8 +23,8 @@ export const useAxios = () => {
       } finally {
         setData(data);
         setLoading(false);
-        return { response, data };
       }
+      return { response, data };
     },
     []
   );
