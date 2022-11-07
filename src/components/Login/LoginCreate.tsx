@@ -16,7 +16,7 @@ export const LoginCreate = () => {
   const email = useForm('email');
   const password = useForm('password');
   
-  const { error, loading, request }  = useAxios()
+  const { error, loading, request } = useAxios()
   const { userLogin } = React.useContext(UserContext)
 
   async function userRegister() {
@@ -29,7 +29,7 @@ export const LoginCreate = () => {
     if (response.status) userLogin(username.value, password.value)
   }
 
-  function handleSubmit(event: FormEvent) {
+  function handleUserRegister(event: FormEvent) {
     event.preventDefault();
     if (username.validate() && email.validate() && password.validate()) {
       userRegister()
@@ -39,7 +39,7 @@ export const LoginCreate = () => {
   return (
     <section className="animeLeft">
       <h1 className="title">Cadastre-se</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleUserRegister}>
         <Input
           label="Usuário"
           id="username"
