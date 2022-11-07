@@ -21,7 +21,7 @@ export const UserHeaderNav = () => {
     setMobileMenu(false)
   }, [location])
 
-  const handleClick = () => userLogout();
+  const handleUserLogout = () => userLogout();
   const toogleMobileMenu = () => setMobileMenu(!mobileMenu);
 
   return (
@@ -43,26 +43,26 @@ export const UserHeaderNav = () => {
         <NavLink
           to=""
           end
-          className={({ isActive }) => (isActive ? styles.active : undefined)}
+          className={({ isActive }) => (isActive ? styles.active : "")}
         >
           <FeedSvg />
           {mobile && 'Minhas Fotos'}
         </NavLink>
         <NavLink
           to="stats"
-          className={({ isActive }) => (isActive ? styles.active : undefined)}
+          className={({ isActive }) => (isActive ? styles.active : "")}
         >
           <StatsSvg />
           {mobile && 'Estatísticas'}
         </NavLink>
         <NavLink
           to="post"
-          className={({ isActive }) => (isActive ? styles.active : undefined)}
+          className={({ isActive }) => (isActive ? styles.active : "")}
         >
           <PostPhotoSvg />
           {mobile && 'Adicionar Foto'}
         </NavLink>
-        <button onClick={handleClick}>
+        <button onClick={handleUserLogout}>
           <LogoutSvg />
           {mobile && 'Sair'}
         </button>
