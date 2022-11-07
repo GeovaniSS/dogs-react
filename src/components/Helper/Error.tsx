@@ -1,5 +1,5 @@
 interface ErrorProps {
-  error: string
+  error: string | null
 }
 
 export const Error = ({ error }: ErrorProps) => {
