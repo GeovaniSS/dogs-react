@@ -1,8 +1,10 @@
 import React, { FormEvent } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { PASSWORD_RESET_POST } from '../../api'
+
 import { useAxios } from '../../hooks/useAxios'
 import { useForm } from '../../hooks/useForm'
+import { PASSWORD_RESET_POST } from '../../api'
+
 import { Button } from '../Forms/Button'
 import { Input } from '../Forms/Input'
 import { Error } from '../Helper/Error'
@@ -37,7 +39,7 @@ export const LoginPasswordReset = () => {
 
   return (
     <section className="animeLeft">
-      <h1>Reseta senha</h1>
+      <h1 className="title">Resete a senha</h1>
       <form onSubmit={handlePasswordResetSubmit}>
         <Input 
           label='Nova Senha'
