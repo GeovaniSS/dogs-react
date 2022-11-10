@@ -8,6 +8,7 @@ import { PASSWORD_RESET_POST } from '../../api'
 import { Button } from '../Forms/Button'
 import { Input } from '../Forms/Input'
 import { Error } from '../Helper/Error'
+import { Head } from '../Helper/Head'
 
 export const LoginPasswordReset = () => {
   const [login, setLogin] = React.useState("")
@@ -39,6 +40,8 @@ export const LoginPasswordReset = () => {
 
   return (
     <section className="animeLeft">
+      <Head title='Resete a senha' description='Página para resetar senha do site Dogs'/>
+
       <h1 className="title">Resete a senha</h1>
       <form onSubmit={handlePasswordResetSubmit}>
         <Input 

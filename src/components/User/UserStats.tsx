@@ -25,7 +25,7 @@ export const UserStats = () => {
   if (!data) return null
   return (
     <React.Suspense fallback={<Loading />}>
-      <Head title="Estatísticas" />
+      <Head title="Estatísticas" description='Página de estatísticas do perfil do usuário' />
       <UserStatsGraphs data={data} />
     </React.Suspense>
   )

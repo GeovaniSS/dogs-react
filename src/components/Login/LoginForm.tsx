@@ -11,6 +11,7 @@ import { useForm } from '../../hooks/useForm';
 import { Link } from 'react-router-dom';
 
 import UserContext from '../../UserContext';
+import { Head } from '../Helper/Head';
 
 export const LoginForm = () => {
   const username = useForm('username');
@@ -26,6 +27,8 @@ export const LoginForm = () => {
 
   return (
     <section className="animeLeft">
+      <Head title='Login' description='Página de Login do site Dogs'/>
+      
       <h1 className="title">Login</h1>
       <form onSubmit={handleSubmit} className={styles.form}>
         <Input

@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { PhotoContent } from './PhotoContent';
 import { Error } from '../Helper/Error';
 import { Loading } from '../Helper/Loading';
+import { Head } from '../Helper/Head';
 
 export const Photo = () => {
   const { id } = useParams()
@@ -22,6 +23,7 @@ export const Photo = () => {
   if (!data) return null
   return ( 
     <section className="container mainContainer">
+      <Head title={data.photo.title} />
       <PhotoContent data={data} single={true} />
     </section>
   )

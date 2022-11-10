@@ -10,6 +10,7 @@ import { Error } from '../Helper/Error';
 
 import { PHOTO_POST } from '../../api';
 import { useNavigate } from 'react-router-dom';
+import { Head } from '../Helper/Head';
 
 interface Img {
   raw: File,
@@ -55,6 +56,8 @@ export const UserPhotoPost = () => {
 
   return (
     <section className={`animeLeft ${styles.photoPost}`}>
+      <Head title='Poste sua foto' description='Página para postar fotos no site Dogs' />
+
       <form onSubmit={handlePhotoPost}>
         <Input
           label="Nome"

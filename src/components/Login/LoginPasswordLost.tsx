@@ -7,6 +7,7 @@ import { useForm } from '../../hooks/useForm'
 import { Button } from '../Forms/Button'
 import { Input } from '../Forms/Input'
 import { Error } from '../Helper/Error'
+import { Head } from '../Helper/Head'
 
 export const LoginPasswordLost = () => {
   const login = useForm("login")
@@ -24,6 +25,8 @@ export const LoginPasswordLost = () => {
 
   return (
     <section className="animeLeft">
+      <Head title='Perdeu a senha' description='Página de recuperação de senha do site Dogs'/>
+
       <h1 className="title">Perdeu a senha?</h1>
       { data ? <p style={{ color: "#4c1" }}>{data}</p> : 
         <form onSubmit={handlePasswordLostSubmit}>

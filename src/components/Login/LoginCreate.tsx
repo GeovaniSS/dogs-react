@@ -10,6 +10,7 @@ import { Error } from '../Helper/Error';
 import { USER_POST } from '../../api';
 
 import UserContext from '../../UserContext';
+import { Head } from '../Helper/Head';
 
 export const LoginCreate = () => {
   const username = useForm('username');
@@ -38,6 +39,8 @@ export const LoginCreate = () => {
 
   return (
     <section className="animeLeft">
+      <Head title='Crie sua conta' description='Página de criar conta do site Dogs'/>
+
       <h1 className="title">Cadastre-se</h1>
       <form onSubmit={handleUserRegister}>
         <Input
