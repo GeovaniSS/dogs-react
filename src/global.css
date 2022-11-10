@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Spectral:wght@700&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0px;
@@ -6,6 +8,10 @@
 :root {
   --type-first: Helvetica, Arial, sans-serif;
   --type-second: 'Spectral', Georgia;
+
+  --yellow-300: #fea;
+  --yellow-500: #fb1;
+  --brown-500: #764701; 
 }
 
 body {
@@ -28,16 +34,72 @@ img {
   max-width: 100%;
 }
 
-button, input {
+button, input, label {
   display: block;
 }
 
 a {
+  display: inline-block;
+  text-align: center;
   text-decoration: none;
+  color: #333;
 }
 
 .container {
   max-width: 50rem;
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+.mainContainer {
+  margin-top: 2rem;
+}
+
+.title {
+  position: relative;
+  font-family: var(--type-second);
+  font-size: 3rem;
+  margin: 1rem 0;
+  line-height: 1;
+  z-index: 1;
+}
+
+.title::before {
+  content: '';
+  display: block;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--yellow-500);
+  border-radius: .2rem;
+  position: absolute;
+  bottom: 5px;
+  left: -5px;
+  z-index: -1;
+}
+
+.animeLeft {
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: animeLeft .3s forwards;
+}
+
+@keyframes animeLeft {
+  to {
+    opacity: 1;
+    transform: initial;
+  }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 10rem);
+}
+
+.AppBody {
+  flex: 1;
+}
+
+.VictoryContainer {
+  height: initial !important;
 }
