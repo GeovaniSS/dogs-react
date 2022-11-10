@@ -5,8 +5,8 @@ import { STATS_GET } from '../../api'
 
 import { Error } from '../Helper/Error'
 import { Loading } from '../Helper/Loading'
-import { UserStatsGraphs } from './UserStatsGraphs'
 import { Head } from '../Helper/Head'
+const UserStatsGraphs = React.lazy(() => import('./UserStatsGraphs'))
 
 export const UserStats = () => {
   const { data, error, loading, request } = useAxios()
@@ -24,9 +24,9 @@ export const UserStats = () => {
   if (error) return <Error error={error} />
   if (!data) return null
   return (
-    <>
+    <React.Suspense fallback={<Loading />}>
       <Head title="Estatísticas" />
       <UserStatsGraphs data={data} />
-    </>
+    </React.Suspense>
   )
 }

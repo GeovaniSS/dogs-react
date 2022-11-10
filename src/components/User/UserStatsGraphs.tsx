@@ -17,7 +17,7 @@ interface UserStatsGraphsProps {
   data: PhotoStats[]
 }
 
-export const UserStatsGraphs = ({ data }: UserStatsGraphsProps) => {
+const UserStatsGraphs = ({ data }: UserStatsGraphsProps) => {
   const [graphs, setGraphs] = React.useState<GraphsPos[]>([])
   const [total, setTotal] = React.useState(0)
 
@@ -60,3 +60,5 @@ export const UserStatsGraphs = ({ data }: UserStatsGraphsProps) => {
     </section>
   )
 }
+
+export default UserStatsGraphs
